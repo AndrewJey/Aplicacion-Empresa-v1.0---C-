@@ -1,0 +1,574 @@
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{3BCC580A-4A74-BFF3-EF1E-A8FECEF61F67}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Aplicación_Empresa</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include=".git\ms-persist.xml" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa.sln" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Debug\AplicacionEmpresa.exe" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Debug\AplicacionEmpresa.pdb" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Debug\AplicacionEmpresa.vshost.exe" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Debug\CapaPresentacion.dll" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Debug\CapaPresentacion.pdb" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\AplicacionEmpresa.exe" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\AplicacionEmpresa.pdb" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\AplicacionEmpresa.vshost.exe" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\CapaDatos.dll" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\CapaDatos.pdb" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\CapaNegocio.dll" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\CapaNegocio.pdb" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\CapaPresentacion.dll" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\CapaPresentacion.pdb" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\obj\Debug\AplicacionEmpresa.csproj.FileListAbsolute.txt" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\obj\Debug\AplicacionEmpresa.exe" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\obj\Debug\AplicacionEmpresa.pdb" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\AplicacionEmpresa.csproj.FileListAbsolute.txt" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\AplicacionEmpresa.exe" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\AplicacionEmpresa.pdb" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\TempPE\DataSet1.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\TempPE\DataSetBDEmpresa.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\TempPE\DataSetProductos.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\CapaDatos\bin\Debug\CapaDatos.dll" />
+    <Content Include="AplicacionEmpresa\CapaDatos\bin\Debug\CapaDatos.pdb" />
+    <Content Include="AplicacionEmpresa\CapaDatos\bin\Release\CapaDatos.dll" />
+    <Content Include="AplicacionEmpresa\CapaDatos\bin\Release\CapaDatos.pdb" />
+    <Content Include="AplicacionEmpresa\CapaDatos\obj\Debug\CapaDatos.csproj.FileListAbsolute.txt" />
+    <Content Include="AplicacionEmpresa\CapaDatos\obj\Debug\CapaDatos.dll" />
+    <Content Include="AplicacionEmpresa\CapaDatos\obj\Debug\CapaDatos.pdb" />
+    <Content Include="AplicacionEmpresa\CapaDatos\obj\Release\CapaDatos.csproj.FileListAbsolute.txt" />
+    <Content Include="AplicacionEmpresa\CapaDatos\obj\Release\CapaDatos.dll" />
+    <Content Include="AplicacionEmpresa\CapaDatos\obj\Release\CapaDatos.pdb" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\bin\Debug\CapaDatos.dll" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\bin\Debug\CapaDatos.pdb" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\bin\Debug\CapaNegocio.dll" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\bin\Debug\CapaNegocio.pdb" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\bin\Release\CapaDatos.dll" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\bin\Release\CapaDatos.pdb" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\bin\Release\CapaNegocio.dll" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\bin\Release\CapaNegocio.pdb" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\obj\Debug\CapaNegocio.csproj.FileListAbsolute.txt" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\obj\Debug\CapaNegocio.dll" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\obj\Debug\CapaNegocio.pdb" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\obj\Release\CapaNegocio.csproj.FileListAbsolute.txt" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\obj\Release\CapaNegocio.dll" />
+    <Content Include="AplicacionEmpresa\CapaNegocio\obj\Release\CapaNegocio.pdb" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\bin\Debug\CapaNegocio.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\bin\Debug\CapaNegocio.pdb" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\bin\Debug\CapaPresentacion.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\bin\Debug\CapaPresentacion.pdb" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\bin\Release\CapaDatos.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\bin\Release\CapaDatos.pdb" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\bin\Release\CapaNegocio.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\bin\Release\CapaNegocio.pdb" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\bin\Release\CapaPresentacion.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\bin\Release\CapaPresentacion.pdb" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\actualizar.jpg" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\agregar.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\agregar_producto.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\categorias.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\clientes.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\delivery.jpg" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\editar.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\editar_producto.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\eliminar.jpg" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\eliminar_producto.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\email.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\empleados.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\entregado.jpg" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\fondo-logo.jpg" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\inicio.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\marcarEntregadoPendiente.jpg" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\pedidos.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\pendiente.jpg" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\productos.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\reportes.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\transporte.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\twitter.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\img\youtube.png" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.FileListAbsolute.txt" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\CapaPresentacion.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\CapaPresentacion.pdb" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.csproj.FileListAbsolute.txt" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.pdb" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Release\TempPE\BDEmpresaDataSet.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Release\TempPE\BDEmpresaDataSet1.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Release\TempPE\BDEmpresaDataSet11.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Release\TempPE\BDEmpresaDataSetPedidosCliente.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Release\TempPE\DataSet1.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Release\TempPE\DataSetPedidosCliente.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Release\TempPE\DataSetProductos.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\obj\Release\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="AplicacionEmpresa\CapaPresentacion\Resources\favicon.png" />
+    <Content Include="GenerarBackUp.sql" />
+    <Content Include="RestaurarBackUp.sql" />
+    <Content Include="scriptDatos.sql" />
+    <Content Include="scriptFechas.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".git\COMMIT_EDITMSG" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-merge-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\push-to-checkout.sample" />
+    <None Include=".git\hooks\sendemail-validate.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\remotes\origin\HEAD" />
+    <None Include=".git\logs\refs\remotes\origin\master" />
+    <None Include=".git\objects\0c\1d18ecb76c30c87ff942a78ba1a51e59aab324" />
+    <None Include=".git\objects\0d\272938d4f3fd65f6904e5de0633bcbe04f7071" />
+    <None Include=".git\objects\0e\a38204b51500d950f933ac9fd18a80d0772bbb" />
+    <None Include=".git\objects\11\9dbb20909eb670139b338c5009b75689c2e4b6" />
+    <None Include=".git\objects\21\47410f38866ce604dd2ed7ae7b34745920ee90" />
+    <None Include=".git\objects\21\6340223e0e6bd3d5feb3857944ecc051468aea" />
+    <None Include=".git\objects\33\05f2d277a197ef046b1f7843272abd45d6a23b" />
+    <None Include=".git\objects\33\0f6d0d57e6ebf2865f55f4876407ffcbef73e6" />
+    <None Include=".git\objects\35\e4733a13a6206ccb93694017b47a1d55da07c0" />
+    <None Include=".git\objects\44\850d3fdfc0d536d9480f2514cb131aa8b39e75" />
+    <None Include=".git\objects\6b\8d70a941c266d34a7fc5f716be30edad61b481" />
+    <None Include=".git\objects\6d\728c943d211b038cd120b71994a0614e489ac0" />
+    <None Include=".git\objects\71\dab092e1522620b9109a1787bd42f3ad8d3de9" />
+    <None Include=".git\objects\73\9ea14f75222f6957d089ba6f594558bda381e2" />
+    <None Include=".git\objects\7e\8065df67bdd99136af745faf5fc4e91e4cd8e7" />
+    <None Include=".git\objects\86\aa3f35b3a68eadcfd76629aada67270a005ebe" />
+    <None Include=".git\objects\96\07a42c930b60c286923c76b5f6b4cc8751a98c" />
+    <None Include=".git\objects\a1\a9287546e88e1ef05d32c806bbc9b42e3fb9a3" />
+    <None Include=".git\objects\a9\6a604fafec276af44b4f08edb26c328dbb832b" />
+    <None Include=".git\objects\aa\5d6e1877ba096aaa27cf3251fef8ec933c4dcf" />
+    <None Include=".git\objects\b6\1e8536d4808105fae21ac4c8ff34cafe14d853" />
+    <None Include=".git\objects\c4\a0a753f68b4f4e6416cbedcdb9a48af212d378" />
+    <None Include=".git\objects\c6\941ddda7870af9b9a11c5a99882ecf8d4fcf2b" />
+    <None Include=".git\objects\d5\e02ff29df1b38872b49193bdc327c13a019130" />
+    <None Include=".git\objects\df\fe5a6b93e45d9f3a51ecf731dca1214a02f99d" />
+    <None Include=".git\objects\e3\d7897058d279ec928b622e26898d643c5bdede" />
+    <None Include=".git\objects\ed\5e02bc8e6fb05fe252d0fa59b9455e2a8de534" />
+    <None Include=".git\objects\f7\2b4f725ac4119fb038b38e7e42fd9c04bf0f87" />
+    <None Include=".git\objects\f8\6cbf6423767d1048da1cf1654fe1d28b0afbd4" />
+    <None Include=".git\objects\pack\pack-d7034aa079da2046f762582d2a3270559fa148c4.idx" />
+    <None Include=".git\objects\pack\pack-d7034aa079da2046f762582d2a3270559fa148c4.pack" />
+    <None Include=".git\objects\pack\pack-d7034aa079da2046f762582d2a3270559fa148c4.rev" />
+    <None Include=".git\packed-refs" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\remotes\origin\HEAD" />
+    <None Include=".git\refs\remotes\origin\master" />
+    <None Include=".vs\Aplicacion-Empresa-v1.0---C-\CopilotIndices\17.14.794.21998\CodeChunks.db" />
+    <None Include=".vs\Aplicacion-Empresa-v1.0---C-\CopilotIndices\17.14.794.21998\SemanticSymbols.db" />
+    <None Include=".vs\Aplicacion-Empresa-v1.0---C-\v17\.wsuo" />
+    <None Include=".vs\Aplicacion-Empresa-v1.0---C-\v17\DocumentLayout.backup.json" />
+    <None Include=".vs\Aplicacion-Empresa-v1.0---C-\v17\DocumentLayout.json" />
+    <None Include=".vs\Aplicación-Empresa\CopilotIndices\17.14.794.21998\CodeChunks.db" />
+    <None Include=".vs\Aplicación-Empresa\CopilotIndices\17.14.794.21998\SemanticSymbols.db" />
+    <None Include=".vs\Aplicación-Empresa\v17\.suo" />
+    <None Include=".vs\Aplicación-Empresa\v17\DocumentLayout.json" />
+    <None Include=".vs\ProjectSettings.json" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="AplicacionEmpresa\.vs\AplicacionEmpresa\CopilotIndices\17.14.794.21998\CodeChunks.db" />
+    <None Include="AplicacionEmpresa\.vs\AplicacionEmpresa\CopilotIndices\17.14.794.21998\SemanticSymbols.db" />
+    <None Include="AplicacionEmpresa\.vs\AplicacionEmpresa\FileContentIndex\cc7d17ce-4e31-4d2b-9d97-0cf836a23d07.vsidx" />
+    <None Include="AplicacionEmpresa\.vs\AplicacionEmpresa\v14\.suo" />
+    <None Include="AplicacionEmpresa\.vs\AplicacionEmpresa\v17\.suo" />
+    <None Include="AplicacionEmpresa\.vs\AplicacionEmpresa\v17\DocumentLayout.json" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa.v12.suo" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\AplicacionEmpresa.csproj" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\App.config" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\bin\Debug\AplicacionEmpresa.exe.config" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\bin\Debug\AplicacionEmpresa.vshost.exe.config" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\bin\Debug\AplicacionEmpresa.vshost.exe.manifest" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\AplicacionEmpresa.exe.config" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\AplicacionEmpresa.vshost.exe.config" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\bin\Release\AplicacionEmpresa.vshost.exe.manifest" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\ClassDiagram1.cd" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\obj\Debug\AplicacionEmpresa.csproj.GenerateResource.Cache" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\obj\Debug\AplicacionEmpresa.csprojResolveAssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\AplicacionEmpresa.csproj.AssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\AplicacionEmpresa.csproj.GenerateResource.Cache" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\AplicacionEmpresa.csprojResolveAssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="AplicacionEmpresa\AplicacionEmpresa\Properties\Settings.settings" />
+    <None Include="AplicacionEmpresa\CapaDatos\CapaDatos.csproj" />
+    <None Include="AplicacionEmpresa\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\CapaDatos\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="AplicacionEmpresa\CapaDatos\obj\Release\CapaDatos.csproj.AssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\CapaDatos\obj\Release\CapaDatos.csprojResolveAssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\CapaDatos\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="AplicacionEmpresa\CapaNegocio\CapaNegocio.csproj" />
+    <None Include="AplicacionEmpresa\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\CapaNegocio\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="AplicacionEmpresa\CapaNegocio\obj\Release\CapaNegocio.csproj.AssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\CapaNegocio\obj\Release\CapaNegocio.csprojResolveAssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\CapaNegocio\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\BDEmpresaDataSet.xsc">
+      <DependentUpon>BDEmpresaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AplicacionEmpresa\CapaPresentacion\BDEmpresaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDEmpresaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AplicacionEmpresa\CapaPresentacion\BDEmpresaDataSet.xss">
+      <DependentUpon>BDEmpresaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AplicacionEmpresa\CapaPresentacion\CapaPresentacion.csproj" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.csproj.AssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.csproj.GenerateResource.Cache" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.csprojResolveAssemblyReference.cache" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\obj\Release\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\Properties\Settings.settings" />
+    <None Include="AplicacionEmpresa\CapaPresentacion\Report1.rdlc" />
+    <None Include="BDEmpresa%28Con Datos%29.bak" />
+    <None Include="BDEmpresa%28Sin Datos%29.bak" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AplicacionEmpresa\AplicacionEmpresa\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="AplicacionEmpresa\AplicacionEmpresa\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="AplicacionEmpresa\AplicacionEmpresa\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\.NETFramework,Version=v4.5.1.AssemblyAttributes.cs" />
+    <Compile Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="AplicacionEmpresa\AplicacionEmpresa\Program.cs" />
+    <Compile Include="AplicacionEmpresa\AplicacionEmpresa\Properties\AssemblyInfo.cs" />
+    <Compile Include="AplicacionEmpresa\AplicacionEmpresa\Properties\Resources.Designer.cs" />
+    <Compile Include="AplicacionEmpresa\AplicacionEmpresa\Properties\Settings.Designer.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\DCategorias.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\DClientes.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\DConexion.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\DEmpleados.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\DPedidoDetalles.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\DPedidos.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\DProductos.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\DReportes.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\DRestauracion.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\DTransportistas.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\obj\Release\.NETFramework,Version=v4.5.1.AssemblyAttributes.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="AplicacionEmpresa\CapaDatos\Properties\AssemblyInfo.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\NCategorias.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\NClientes.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\NConexion.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\NEmpleados.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\NPedidoDetalles.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\NPedidos.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\NProductos.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\NReportes.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\NRestauracion.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\NTransportistas.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\obj\Release\.NETFramework,Version=v4.5.1.AssemblyAttributes.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="AplicacionEmpresa\CapaNegocio\Properties\AssemblyInfo.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\BDEmpresaDataSet.Designer.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\BDEmpresaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDEmpresaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Categorias.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Categorias.Designer.cs">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Clientes.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Empleados.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Empleados.Designer.cs">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevaCategoria.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevaCategoria.Designer.cs">
+      <DependentUpon>FrmAgregarNuevaCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoCliente.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoCliente.Designer.cs">
+      <DependentUpon>FrmAgregarNuevoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoEmpleado.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoEmpleado.Designer.cs">
+      <DependentUpon>FrmAgregarNuevoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoPedido.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoPedido.Designer.cs">
+      <DependentUpon>FrmAgregarNuevoPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoProducto.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoProducto.Designer.cs">
+      <DependentUpon>FrmAgregarNuevoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoTransporte.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoTransporte.Designer.cs">
+      <DependentUpon>FrmAgregarNuevoTransporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarCategoria.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarCategoria.Designer.cs">
+      <DependentUpon>FrmEditarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarCliente.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarCliente.Designer.cs">
+      <DependentUpon>FrmEditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarEmpleado.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarEmpleado.Designer.cs">
+      <DependentUpon>FrmEditarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarPedidoEntregado.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarPedidoEntregado.Designer.cs">
+      <DependentUpon>FrmEditarPedidoEntregado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarPedidoPendiente.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarPedidoPendiente.Designer.cs">
+      <DependentUpon>FrmEditarPedidoPendiente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarProducto.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarProducto.Designer.cs">
+      <DependentUpon>FrmEditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarTransporte.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmEditarTransporte.Designer.cs">
+      <DependentUpon>FrmEditarTransporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmInicio.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmMarcarEntregado.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmMarcarEntregado.Designer.cs">
+      <DependentUpon>FrmMarcarEntregado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmMarcarPendiente.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmMarcarPendiente.Designer.cs">
+      <DependentUpon>FrmMarcarPendiente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmPedidoEntregadoDetalles.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmPedidoEntregadoDetalles.Designer.cs">
+      <DependentUpon>FrmPedidoEntregadoDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmPedidoPendienteDetalles.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmPedidoPendienteDetalles.Designer.cs">
+      <DependentUpon>FrmPedidoPendienteDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmReportes.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\FrmReportes.Designer.cs">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\obj\Release\.NETFramework,Version=v4.5.1.AssemblyAttributes.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Pedidos.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Productos.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Properties\AssemblyInfo.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Properties\Resources.Designer.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Properties\Settings.Designer.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Transporte.cs" />
+    <Compile Include="AplicacionEmpresa\CapaPresentacion\Transporte.Designer.cs">
+      <DependentUpon>Transporte.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AplicacionEmpresa\AplicacionEmpresa\obj\Debug\AplicacionEmpresa.Properties.Resources.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\AplicacionEmpresa\obj\Release\AplicacionEmpresa.Properties.Resources.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\AplicacionEmpresa\Properties\Resources.resx" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\Categorias.resx">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\Empleados.resx">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarEmpleado.resx" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevaCategoria.resx">
+      <DependentUpon>FrmAgregarNuevaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoCliente.resx">
+      <DependentUpon>FrmAgregarNuevoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoEmpleado.resx">
+      <DependentUpon>FrmAgregarNuevoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoPedido.resx">
+      <DependentUpon>FrmAgregarNuevoPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoProducto.resx">
+      <DependentUpon>FrmAgregarNuevoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmAgregarNuevoTransporte.resx">
+      <DependentUpon>FrmAgregarNuevoTransporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmEditarCategoria.resx">
+      <DependentUpon>FrmEditarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmEditarCliente.resx">
+      <DependentUpon>FrmEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmEditarEmpleado.resx">
+      <DependentUpon>FrmEditarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmEditarPedidoEntregado.resx">
+      <DependentUpon>FrmEditarPedidoEntregado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmEditarPedidoPendiente.resx">
+      <DependentUpon>FrmEditarPedidoPendiente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmEditarProducto.resx">
+      <DependentUpon>FrmEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmEditarTransporte.resx">
+      <DependentUpon>FrmEditarTransporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmMarcarEntregado.resx">
+      <DependentUpon>FrmMarcarEntregado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmMarcarPendiente.resx">
+      <DependentUpon>FrmMarcarPendiente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmPedidoEntregadoDetalles.resx">
+      <DependentUpon>FrmPedidoEntregadoDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmPedidoPendienteDetalles.resx">
+      <DependentUpon>FrmPedidoPendienteDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\FrmReportes.resx">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\CapaPresentacion.Empleados.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\CapaPresentacion.FrmInicio.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.Categorias.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.Clientes.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.Empleados.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmAgregarNuevaCategoria.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmAgregarNuevoCliente.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmAgregarNuevoEmpleado.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmAgregarNuevoPedido.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmAgregarNuevoProducto.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmAgregarNuevoTransporte.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmEditarCategoria.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmEditarCliente.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmEditarEmpleado.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmEditarPedidoEntregado.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmEditarPedidoPendiente.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmEditarProducto.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmEditarTransporte.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmInicio.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmMarcarEntregado.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmMarcarPendiente.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmPedidoEntregadoDetalles.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmPedidoPendienteDetalles.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.FrmReportes.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.Pedidos.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.Productos.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.Properties.Resources.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\obj\Release\CapaPresentacion.Transporte.resources" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\Pedidos.resx">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\Properties\Resources.resx" />
+    <EmbeddedResource Include="AplicacionEmpresa\CapaPresentacion\Transporte.resx">
+      <DependentUpon>Transporte.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\refs\tags\" />
+    <Folder Include="AplicacionEmpresa\CapaDatos\obj\Release\TempPE\" />
+    <Folder Include="AplicacionEmpresa\CapaNegocio\obj\Release\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
