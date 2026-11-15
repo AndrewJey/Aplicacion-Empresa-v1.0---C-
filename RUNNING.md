@@ -26,13 +26,13 @@ Inventario y compilaciones locales del 2026-11-15. Una compilación correcta no 
 | Componente | Tipo / destino | Validación |
 | --- | --- | --- |
 | [AplicacionEmpresa/AplicacionEmpresa.sln](<AplicacionEmpresa/AplicacionEmpresa.sln>) | solution | Sin ejecutar |
-| [AplicacionEmpresa/AplicacionEmpresa/AplicacionEmpresa.csproj](<AplicacionEmpresa/AplicacionEmpresa/AplicacionEmpresa.csproj>) | dotnet / v4.8.1 | Compila; prueba funcional pendiente |
-| [AplicacionEmpresa/CapaDatos/CapaDatos.csproj](<AplicacionEmpresa/CapaDatos/CapaDatos.csproj>) | dotnet / v4.8.1 | Compila; prueba funcional pendiente |
-| [AplicacionEmpresa/CapaNegocio/CapaNegocio.csproj](<AplicacionEmpresa/CapaNegocio/CapaNegocio.csproj>) | dotnet / v4.8.1 | Compila; prueba funcional pendiente |
-| [AplicacionEmpresa/CapaPresentacion/CapaPresentacion.csproj](<AplicacionEmpresa/CapaPresentacion/CapaPresentacion.csproj>) | dotnet / v4.8.1 | Compila; prueba funcional pendiente |
-| [Aplicación-Empresa.csproj](<Aplicación-Empresa.csproj>) | dotnet / v4.8.1 | Bloqueado: CS2001 |
+| [AplicacionEmpresa/AplicacionEmpresa/AplicacionEmpresa.csproj](<AplicacionEmpresa/AplicacionEmpresa/AplicacionEmpresa.csproj>) | dotnet / v4.8.1 | Compila; comprobado el 2026-11-15; ver alcance actualizado abajo |
+| [AplicacionEmpresa/CapaDatos/CapaDatos.csproj](<AplicacionEmpresa/CapaDatos/CapaDatos.csproj>) | dotnet / v4.8.1 | Compila; comprobado el 2026-11-15; ver alcance actualizado abajo |
+| [AplicacionEmpresa/CapaNegocio/CapaNegocio.csproj](<AplicacionEmpresa/CapaNegocio/CapaNegocio.csproj>) | dotnet / v4.8.1 | Compila; comprobado el 2026-11-15; ver alcance actualizado abajo |
+| [AplicacionEmpresa/CapaPresentacion/CapaPresentacion.csproj](<AplicacionEmpresa/CapaPresentacion/CapaPresentacion.csproj>) | dotnet / v4.8.1 | Compila; comprobado el 2026-11-15; ver alcance actualizado abajo |
+| [Aplicación-Empresa.csproj](<Aplicación-Empresa.csproj>) | dotnet / v4.8.1 | Compila; comprobado el 2026-11-15; ver alcance actualizado abajo |
 | [Aplicación-Empresa.sln](<Aplicación-Empresa.sln>) | solution | Sin ejecutar |
-| [Aplicación-Empresa1.csproj](<Aplicación-Empresa1.csproj>) | dotnet / v4.8.1 | Bloqueado: CS2001 |
+| [Aplicación-Empresa1.csproj](<Aplicación-Empresa1.csproj>) | dotnet / v4.8.1 | Compila; comprobado el 2026-11-15; ver alcance actualizado abajo |
 
 ## Archivos ignorados
 
@@ -46,8 +46,29 @@ Hallazgos de inspección estática; deben revisarse aunque otro componente compi
 
 | Hallazgo | Archivo |
 | --- | --- |
-| Fuente/recurso faltante | `Aplicación-Empresa.csproj → AplicacionEmpresa\AplicacionEmpresa\obj\Release\.NETFramework,Version=v4.5.1.AssemblyAttributes.cs` |
-| Fuente/recurso faltante | `Aplicación-Empresa.csproj → AplicacionEmpresa\CapaPresentacion\BDEmpresaDataSet1.Designer.cs` |
-| Fuente/recurso faltante | `Aplicación-Empresa1.csproj → AplicacionEmpresa\AplicacionEmpresa\obj\Release\.NETFramework,Version=v4.5.1.AssemblyAttributes.cs` |
-| Fuente/recurso faltante | `Aplicación-Empresa1.csproj → AplicacionEmpresa\CapaPresentacion\BDEmpresaDataSet1.Designer.cs` |
+| Fuente/recurso faltante | Compila; comprobado el 2026-11-15; ver alcance actualizado abajo |
+| Fuente/recurso faltante | Compila; comprobado el 2026-11-15; ver alcance actualizado abajo |
+| Fuente/recurso faltante | Compila; comprobado el 2026-11-15; ver alcance actualizado abajo |
+| Fuente/recurso faltante | Compila; comprobado el 2026-11-15; ver alcance actualizado abajo |
 <!-- source-findings:end -->
+
+<!-- build-repairs-20261115:start -->
+## Reparación y comprobación — 2026-11-15
+
+- Los dos proyectos de la raíz ahora agregan las cuatro capas reales mediante ProjectReference. Se eliminó la compilación accidental de copias de obj/bin y de fuentes generadas ausentes.
+
+Comprobado:
+
+- Los seis proyectos .NET compilan con MSBuild de Visual Studio 2022.
+
+Comandos:
+
+```powershell
+msbuild 'AplicacionEmpresa/AplicacionEmpresa.sln' /restore /t:Build
+```
+
+Alcance pendiente:
+
+- La operación con datos requiere configurar SQL Server y cargar el esquema del proyecto; no se validó un flujo completo con su base original.
+
+<!-- build-repairs-20261115:end -->
