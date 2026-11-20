@@ -1,39 +1,70 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
     public class DConexion
     {
-        public static String CnBDEmpresa = "Data Source=PABLO-MARSOLI\\SQLEXPRESS; Initial Catalog=BDEmpresa; Integrated Security=SSPI;";
-        public static String CnMaster = "Data Source=NOTEBOOK-ACER\\HERNANDEMCZUK; Initial Catalog=master; Integrated Security=SSPI;";
+        private const string DefaultEmpresaConnection = "Data Source=.\\SQLEXPRESS; Initial Catalog=BDEmpresa; Integrated Security=SSPI;";
+        private const string DefaultMasterConnection = "Data Source=.\\SQLEXPRESS; Initial Catalog=master; Integrated Security=SSPI;";
 
-        public String ChequearConexion()
+        private static string _cnBDEmpresaOverride;
+        private static string _cnMasterOverride;
+
+        public static string CnBDEmpresa
         {
-            String mensaje = "";
-            SqlConnection SqlConexion = new SqlConnection();
+            get
+            {
+                if (!string.IsNullOrWhiteSpace(_cnBDEmpresaOverride))
+                {
+                    return _cnBDEmpresaOverride;
+                }
 
+                string env = Environment.GetEnvironmentVariable("EMPRESA_CONNECTION_STRING");
+                if (!string.IsNullOrWhiteSpace(env))
+                {
+                    return env.Trim();
+                }
+
+                return DefaultEmpresaConnection;
+            }
+            set { _cnBDEmpresaOverride = value; }
+        }
+
+        public static string CnMaster
+        {
+            get
+            {
+                if (!string.IsNullOrWhiteSpace(_cnMasterOverride))
+                {
+                    return _cnMasterOverride;
+                }
+
+                string env = Environment.GetEnvironmentVariable("EMPRESA_MASTER_CONNECTION_STRING");
+                if (!string.IsNullOrWhiteSpace(env))
+                {
+                    return env.Trim();
+                }
+
+                return DefaultMasterConnection;
+            }
+            set { _cnMasterOverride = value; }
+        }
+
+        public string ChequearConexion()
+        {
             try
             {
-                SqlConexion.ConnectionString = DConexion.CnBDEmpresa;
-                SqlConexion.Open();
-                mensaje = "Y";
+                using (SqlConnection sqlConexion = new SqlConnection(DConexion.CnBDEmpresa))
+                {
+                    sqlConexion.Open();
+                    return "Y";
+                }
             }
             catch (Exception ex)
             {
-                mensaje = ex.Message;
+                return ex.Message;
             }
-            finally
-            {
-                SqlConexion.Close();
-            }
-
-            return mensaje;
         }
     }
-
 }

@@ -72,3 +72,11 @@ Alcance pendiente:
 - La operación con datos requiere configurar SQL Server y cargar el esquema del proyecto; no se validó un flujo completo con su base original.
 
 <!-- build-repairs-20261115:end -->
+
+<!-- improvements-20261119:start -->
+## Mejoras y verificación — 2026-11-19 (Configuración de SQL Server sin nombres de equipo fijos y validación en CapaNegocio)
+
+- Reemplazados los servidores fijos `PABLO-MARSOLI\SQLEXPRESS` y `NOTEBOOK-ACER\HERNANDEMCZUK` en `DConexion` por propiedades dinámicas con variables de entorno (`EMPRESA_CONNECTION_STRING`, `EMPRESA_MASTER_CONNECTION_STRING`) y respaldo local `.\SQLEXPRESS`.
+- Añadidas validaciones de entrada en `NCategorias`, `NProductos` y `NClientes` (campos obligatorios, IDs positivos, precios no negativos, formato de correo y paginación mínima).
+- Validación: compilación MSBuild de la solución de 4 capas y proyecto raíz, más 8 aserciones sobre `DConexion` y `CapaNegocio`.
+<!-- improvements-20261119:end -->
